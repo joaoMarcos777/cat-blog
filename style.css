@@ -71,18 +71,17 @@ header {
   border-radius: 50%;
 }
 
-.content {
+main {
   max-width: 80rem;
-  margin-inline: auto;
 }
 
-.content img {
+main img {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
-.content h1 {
+main h1 {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.8rem;
@@ -135,7 +134,6 @@ header {
   max-width: 38.4rem;
   padding: 0 1.6rem;
   margin-bottom: 3.2rem;
-  margin-inline: auto;
 
   display: flex;
   flex-direction: column;
@@ -199,11 +197,16 @@ footer {
   }
 
   main {
+    max-width: 80.3rem;
     margin-top: 4.4rem;
   }
 
   main img {
     border-radius: 5px;
+  }
+
+  .sidebar {
+    padding: 0;
   }
 
   .container {
@@ -218,13 +221,20 @@ footer {
   }
 }
 
+@media (max-width: 1200px) {
+  main {
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1200px) {
   .page {
     display: grid;
     grid-template-areas:
       "header header"
-      "main main"
+      "main sidebar"
       "footer footer";
+    column-gap: 3.4rem;
   }
 
   header {
@@ -233,13 +243,12 @@ footer {
 
   main {
     grid-area: main;
-    display: flex;
-    gap: 3.4rem;
-    margin-inline: auto;
+    place-self: flex-end;
   }
 
-  .content {
-    margin: 0;
+  .sidebar {
+    place-self: flex-start;
+    margin-top: 4.4rem;
   }
 
   footer {
