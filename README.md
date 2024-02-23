@@ -2,7 +2,7 @@
   <img src="./assets/logo.svg" width="140px" />
 </p>
 
-<h1 align="center">Cats Blog</h1>
+<h1 align="center">Cat Blog</h1>
 
 > A blog page about cats.
 
